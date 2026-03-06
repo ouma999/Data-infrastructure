@@ -14,12 +14,15 @@ const dbConfig = {
   password: process.env.DB_PASSWORD,
   port:     1433,
 
-  options: {
-    encrypt:                process.env.NODE_ENV === 'production', // true on AWS, false on local
-    trustServerCertificate: process.env.NODE_ENV !== 'production', // true on local, false on AWS
-    enableArithAbort:       true,
-    integratedSecurity:     false
-  },
+options: {
+    encrypt: true,
+    trustServerCertificate: true,
+    enableArithAbort: true,
+    integratedSecurity: false
+},
+  
+
+
   pool: {
     max:              10,
     min:              0,
